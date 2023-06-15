@@ -1,0 +1,11 @@
+int			-> %d,%i,%x,%o
+unsigned int		-> %u
+short int		-> %hd
+short unsigned int	-> %hu
+long int		-> %ld
+long unsigned int	-> %lu
+char			-> %c
+unsigned char		-> %c
+float			-> %f
+double			-> %lf
+long double		-> %Lf
