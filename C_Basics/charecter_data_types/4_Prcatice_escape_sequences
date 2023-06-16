@@ -1,0 +1,31 @@
+The escape sequences are used in printf()
+
+\n	-> new line
+\a	-> audible alert
+\b	-> backspace
+\t	-> horizontal tabspace
+\v	-> vertical tabspace
+\r	-> carriage return
+
+For example:
+
+#include<stdio.h>
+int main()
+{
+printf("Hemanth\nHemu\n");
+printf("Hemanth\aHemu\n");
+printf("Hemanth\bHemu\n");
+printf("Hemanth\tHemu\n");
+printf("Hemanth\vHemu\n");
+printf("Hemanth\rHemu\n");
+}
+
+op:-
+Hemanth
+Hemu
+HemanthHemu
+HemantHemu
+Hemanth	Hemu
+Hemanth
+       Hemu
+Hemunth

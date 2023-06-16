@@ -1,0 +1,30 @@
+In c-language the printf() is used to get the output and scanf() is used to read the input from user
+
+For example:-
+
+#include<stdio.h>
+int main()
+{
+int a,b;
+printf("Enter a value:");
+scanf("%d",&a);
+printf("Enter b value:");
+scanf("%d",&b);
+printf("%d\n",a);
+printf("%d\n",b);
+printf("%d",a+b);
+}
+
+op:-
+Enter a value:4
+Enter b value:5
+4
+5
+9
+
+In the above example,  scanf("%d",&a);
+	%d is the format specifier.the format specifier is used as based on data type. &a is the adress of a.
+	The printf() syntax have 3 scenarios. they are,
+		static text	-> line 9,11
+		Format specifier-> line  15
+		escape sequences-> line 13,14

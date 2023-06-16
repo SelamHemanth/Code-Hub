@@ -1,0 +1,45 @@
+The skip character is used in read and print values
+
+For example:-
+
+#include<stdio.h>
+int main()
+{
+int a;
+char b;
+printf("Enter two values:");
+scanf("%d %c",&a,&b);
+printf("%d %d",a,b);
+}
+
+output:-
+Enter two values:4 A
+4 65
+
+In the above example, in scanf() space is also takes as a character,by skipping the space in output, we need to mention space in printf() between the two format spacifiers.
+For skipping, the getchar() function is also used to skip the space,enter key value.
+
+For example:-
+
+#include<stdio.h>
+int main()
+{
+int a;
+char b;
+printf("Enter a,b values");
+scanf("%d",&a);
+getchar();
+scanf("%c",&b);
+printf("%d%d",a,b);
+}
+
+op1:-
+Enter a,b values4 A
+432
+
+op2:-
+Enter a,b values4 A
+465
+
+In op1 is the output without using of getchar().so,the space ascii values is printed along with "a" number
+In op2 is the output by using getchar().so,the space is skipped and then printed 465.Beacause "A" ascii value is 65.
