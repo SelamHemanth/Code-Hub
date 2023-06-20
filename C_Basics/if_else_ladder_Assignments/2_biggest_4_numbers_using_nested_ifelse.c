@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-int a,b,c,d;
+int a,b,c,d,e;
 printf("Enter 4 numbers");
 scanf("%d%d%d%d",&a,&b,&c,&d);
 if(a>b)
@@ -9,34 +9,54 @@ if(a>b)
 if(a>c)
 {
 if(a>d)
-printf("%d is big",a);
-}
-}
-if(b>a)
+e=a;
+else 
 {
-if(b>c)
-{
-if(b>d)
-printf("%d is big",b);
-}
-}
-if(c>a)
-{
-if(c>b)
-{
-if(c>d)
-printf("%d is big",c);
-}
-}
-if(d>a)
-{
-if(d>b)
-{
-if(d>c)
-printf("%d is big",d);
+e=d;
 }
 }
 else
-printf("All are equal\n");
+{
+{
+if (c>d)
+{
+e=c;
+}
+else
+{
+e=d;
+}
+}
+}
+}
+else
+{
+{
+if(d>c)
+{
+if(b>d)
+{
+e=b;
+}
+else
+{
+e=d;
+}
+}
+else
+{
+if(c>d)
+{
+e=c;
+}
+else
+{
+e=d;
+}
+}
+}
+printf("%d is big number\n",e);
+return 0;
+}
 return 0;
 }
