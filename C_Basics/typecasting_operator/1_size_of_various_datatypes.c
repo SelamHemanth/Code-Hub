@@ -1,0 +1,64 @@
+#include<stdio.h>
+int main()
+{
+    int a=-35;
+    unsigned int b=35;
+    short int c;
+    unsigned short int d;
+    long int e;
+    unsigned long int f;
+    char g;
+    unsigned char h;
+    float i;
+    double j;
+    long double k;
+    printf("Size of Datatypes\n\n");
+    printf("int->%lu\n",sizeof(int));
+    printf("unsigned->%lu\n",sizeof(unsigned int));
+    printf("short->%lu\n",sizeof(short int));
+    printf("unsigned short->%lu\n",sizeof(unsigned short int));
+    printf("long int->%lu\n",sizeof(long int));
+    printf("unsigned long int->%lu\n",sizeof(unsigned long int ));
+    printf("float->%lu\n",sizeof(float));
+    printf("char->%lu\n",sizeof(char));
+    printf("unsigned char->%lu\n",sizeof(unsigned char));
+    printf("double->%lu\n",sizeof(double));
+    printf("long double->%lu\n\n",sizeof(long double));
+    printf("Size of Variables\n\n");
+    printf("int->%lu\n",sizeof(a));
+    printf("unsigned->%lu\n",sizeof(b));
+    printf("short->%lu\n",sizeof(c));
+    printf("unsigned short->%lu\n",sizeof(d));
+    printf("long int->%lu\n",sizeof(e));
+    printf("unsigned long int->%lu\n",sizeof(f));
+    printf("float->%lu\n",sizeof(g));
+    printf("char->%lu\n",sizeof(h));
+    printf("unsigned char->%lu\n",sizeof(i));
+    printf("double->%lu\n",sizeof(j));
+    printf("long double->%lu\n\n",sizeof(k));
+    printf("Size of Constants\n\n");
+    printf("int->%lu\n",sizeof(-585));
+    printf("unsigned->%lu\n",sizeof(5412));
+    printf("short->%lu\n",sizeof(-5721));
+    printf("unsigned short->%lu\n",sizeof(452));
+    printf("long int->%lu\n",sizeof(-64211));
+    printf("unsigned long int->%lu\n",sizeof(54150));
+    printf("float->%lu\n",sizeof(25.14554));
+    printf("char-> %lu\n",sizeof(g));
+    printf("unsigned char->%lu\n",sizeof(g));
+    printf("double->%lu\n",sizeof(-551411));
+    printf("long double->%lu\n\n",sizeof(3524100));
+    printf("Size of Expression\n\n");
+    printf("int->%lu\n",sizeof(a+b));
+    printf("unsigned->%lu\n",sizeof(a+b));
+    printf("short->%lu\n",sizeof(a+b));
+    printf("unsigned short->%lu\n",sizeof(a+b));
+    printf("long int->%lu\n",sizeof(a+b));
+    printf("unsigned long int->%lu\n",sizeof(a+b));
+    printf("float->%lu\n",sizeof(a+b));
+    printf("char-> %lu\n",sizeof(a+b));
+    printf("unsigned char-> %lu\n",sizeof(a+b));
+    printf("double->%lu\n",sizeof(a+b));
+    printf("long double->%lu\n",sizeof(a+b));
+}
+
