@@ -29,7 +29,7 @@ a=currentstock(a);
 printf("\n\t\tSTOCK\n\nCurrent Stock is %d\n\n",a);
 }
 }while(o<4);
-printf("\n\nClosing stock :%d\n",a);
+printf("\n\nClosing stock :%d\n",currentstock(a));
 printf("No of sales :%d\n",sa);
 printf("No of items sold :%d\n",iso);
 printf("No of purchases :%d\n",pu);
