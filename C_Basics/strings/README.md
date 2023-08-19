@@ -4,8 +4,7 @@
 
 2). Write a program that reads a string as input, and determines whether the string is a palindrome or not.
 
-3). Write a program to replace a given character by another character in a string.
-" WAP to display the word expansion of a number
+3 WAP to display the word expansion of a number
 eg., Input : 789
 Output : Seven Eight Nine"
 
@@ -76,4 +75,7 @@ output : str[] = "lenreK"
 // return 1 if the given string is a palindrome, return 0 if it is not a palindrome
 
 14) int strchr( char str[], char ch)
-// search the character ch ,in string str , whenever the first matching occurs, return the matching index. 
+// search the character ch ,in string str , whenever the first matching occurs, return the matching index.
+
+15) Write a program to replace a given character by another character in a string.
+ 
