@@ -1,0 +1,204 @@
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from supermarket...done.
+(gdb) l
+1	#include<stdio.h>
+2	int currentstock(int);
+3	int purchase(int);
+4	int sell(int);
+5	
+6	int stock=100;
+7	
+8	int main()
+9	{
+10	int o,a=1;
+(gdb) b 8
+Breakpoint 1 at 0x772: file main.c, line 8.
+(gdb) l
+11	printf("Welcome To Super Market\n");
+12	printf("***********************\n\n");
+13	do
+14	{
+15	printf("1.Sell items\n2.Purchase new items\n3.Check AvailableStock\n4.Quit\n\n");
+16	printf("Choose an option:");
+17	scanf("%d",&o);
+18	if(o==1)
+19	{
+20	sell(a);
+(gdb) b 16
+Breakpoint 2 at 0x7ac: file main.c, line 16.
+(gdb) l
+21	}
+22	else if(o==2)
+23	{
+24	purchase(a);
+25	}
+26	else if(o==3)
+27	{
+28	currentstock(a);
+29	}
+30	}while(o<4);
+(gdb) b 24
+Breakpoint 3 at 0x7f1: file main.c, line 24.
+(gdb) b 28
+Breakpoint 4 at 0x805: file main.c, line 28.
+(gdb) l
+31	printf("\nThank You\n");
+32	}
+33	
+(gdb) l
+Line number 34 out of range; main.c has 33 lines.
+(gdb) b purchase.c:2
+Breakpoint 5 at 0x849: file purchase.c, line 2.
+(gdb) l
+Line number 34 out of range; main.c has 33 lines.
+(gdb) b sales.c:12
+Breakpoint 6 at 0x928: file sales.c, line 12.
+(gdb) b stock.c:8
+Breakpoint 7 at 0x997: file stock.c, line 8.
+(gdb) i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000000772 in main at main.c:8
+2       breakpoint     keep y   0x00000000000007ac in main at main.c:16
+3       breakpoint     keep y   0x00000000000007f1 in main at main.c:24
+4       breakpoint     keep y   0x0000000000000805 in main at main.c:28
+5       breakpoint     keep y   0x0000000000000849 in purchase at purchase.c:2
+6       breakpoint     keep y   0x0000000000000928 in sell at sales.c:12
+7       breakpoint     keep y   0x0000000000000997 in currentstock at stock.c:8
+(gdb) r
+Starting program: /home/km/KM_GITLAB/km50besd14/C_Basics/GDB_Debugging/4_super_market/supermarket 
+
+Breakpoint 1, main () at main.c:9
+9	{
+(gdb) s
+10	int o,a=1;
+(gdb) p o
+$1 = -8480
+(gdb) p o
+$2 = -8480
+(gdb) s
+11	printf("Welcome To Super Market\n");
+(gdb) s
+_IO_puts (str=0x555555554a48 "Welcome To Super Market") at ioputs.c:33
+33	ioputs.c: No such file or directory.
+(gdb) c
+Continuing.
+Welcome To Super Market
+***********************
+
+1.Sell items
+2.Purchase new items
+3.Check AvailableStock
+4.Quit
+
+
+Breakpoint 2, main () at main.c:16
+16	printf("Choose an option:");
+(gdb) c
+Continuing.
+Choose an option:3
+
+Breakpoint 4, main () at main.c:28
+28	currentstock(a);
+(gdb) c
+Continuing.
+
+Breakpoint 7, currentstock (a=1) at stock.c:8
+warning: Source file is more recent than executable.
+8	printf("\n\t\tSTOCK\n\nCurrent Stock is %d\n\n",stock);
+(gdb) s
+__printf (format=0x555555554b98 "\n\t\tSTOCK\n\nCurrent Stock is %d\n\n") at printf.c:28
+28	printf.c: No such file or directory.
+(gdb) c
+Continuing.
+
+		STOCK
+
+Current Stock is 100
+
+1.Sell items
+2.Purchase new items
+3.Check AvailableStock
+4.Quit
+
+
+Breakpoint 2, main () at main.c:16
+16	printf("Choose an option:");
+(gdb) c
+Continuing.
+Choose an option:2
+
+Breakpoint 3, main () at main.c:24
+24	purchase(a);
+(gdb) c
+Continuing.
+
+Breakpoint 5, purchase (a=1) at purchase.c:6
+6	{
+(gdb) c
+Continuing.
+
+		PURCHASE
+
+Enter number of items:
+200
+1.Sell items
+2.Purchase new items
+3.Check AvailableStock
+4.Quit
+
+
+Breakpoint 2, main () at main.c:16
+16	printf("Choose an option:");
+(gdb) c
+Continuing.
+Choose an option:3
+
+Breakpoint 4, main () at main.c:28
+28	currentstock(a);
+(gdb) s
+currentstock (a=1) at stock.c:7
+7	int b=1;
+(gdb) s
+
+Breakpoint 7, currentstock (a=1) at stock.c:8
+8	printf("\n\t\tSTOCK\n\nCurrent Stock is %d\n\n",stock);
+(gdb) p stock
+$3 = 300
+(gdb) c
+Continuing.
+
+		STOCK
+
+Current Stock is 300
+
+1.Sell items
+2.Purchase new items
+3.Check AvailableStock
+4.Quit
+
+
+Breakpoint 2, main () at main.c:16
+16	printf("Choose an option:");
+(gdb) s
+__printf (format=0x555555554ac1 "Choose an option:") at printf.c:28
+28	printf.c: No such file or directory.
+(gdb) c
+Continuing.
+Choose an option:4
+
+Thank You
+[Inferior 1 (process 10519) exited normally]
+(gdb) quit
