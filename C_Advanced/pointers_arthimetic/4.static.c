@@ -9,13 +9,13 @@ int main()
     int l=sizeof(arr)/4;
     printf("Enter array elemets:\n");
     for(int i=0;i<l;i++)
-        scanf("%d",&arr[i]);
+        scanf("%d",&(*(arr+i)));
     printf("\n");    
     for(int i=0;i<=10;i++)
     {
         v=stat();
         printf("%d\n",*v);
-        *v=arr[i];
+        *v=(*(arr+i));
     }
 }
 
