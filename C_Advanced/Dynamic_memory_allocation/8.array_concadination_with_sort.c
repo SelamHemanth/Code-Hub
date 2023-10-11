@@ -58,10 +58,10 @@ int main()
 		printf("Memory not allocated\n");
 	else
 	{
-		for(int i=0;i<*arr4;i++)
+		for(int i=0;i<c;i++)
 			printf("%d ",arr4[i]);
 		printf("\n");
 
 	}
-free(arr1);free(arr2);free(arr3);free(arr4);
+//free(arr1);free(arr2);free(arr3);free(arr4);
 }
