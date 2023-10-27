@@ -9,6 +9,7 @@ int main(int n,char *p[])
 	if(n!=4)
 	{
 		printf("Invalid Arguments\n");
+		printf("./a.out <operand1> < + , - , '*', % , / > <expression2>\n");
 		return 0;
 	}
 	else
