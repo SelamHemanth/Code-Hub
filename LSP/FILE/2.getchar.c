@@ -1,19 +1,12 @@
-#include <stdio.h>
+#include <unistd.h>
 
-int my_getchar(void) {
-  unsigned char c;
-  if (read(0, &c, 1) != 1) {
-    return EOF;
-  }
-  return c;
-}
-
-int main(void) {
-  int c;
-
-  while ((c = my_getchar()) != EOF) {
-    putchar(c);
-  }
-
-  return 0;
+int main()
+{
+	char buff[10];
+	while(1)
+	{
+		int a=read(0,buff,1);
+		write(a,buff,1);
+	}
+	return 0;
 }

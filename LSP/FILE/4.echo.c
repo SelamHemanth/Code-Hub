@@ -6,11 +6,13 @@ int main(int argc, char *agrv[])
 		printf("Invalid Arguments\n");
 	else
 	{
-		for(int i=1;i<argc;i++)
+		int i=1;
+		while(i<argc)
 		{
-			printf("%s",agrv[i]);
-			if(i < argc-1)
+			 printf("%s",agrv[i]);
+			if(i< argc-1)
 				printf(" ");
+			i++;
 		}
 	}
 	printf("\n");
