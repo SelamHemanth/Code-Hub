@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	int wordCount = 0;
+	int wordCount = 0,charcount=0;
 	char buffer[1024];
 	int bytes;
 
@@ -28,11 +29,20 @@ int main(int argc, char *argv[])
 		{
 			if(buffer[i]==' ' || buffer[i]=='\n' || buffer[i]==',')
 				wordCount++;
+			charcount++;
 		}
 	}
-
-	close(fd);
-	printf("Word count: %d\n", wordCount);
+	lseek(fd,0,SEEK_SET);
+	int i=0;
+	  while ((bytes = read(fd, buffer, 1)) > 0)
+        {
+                if (buffer[0] == '\n')
+                {
+                        i++;
+                }
+        }
+	printf("%d %d %d %s\n",i,wordCount,charcount,argv[1]);
+	 close(fd);
 	return 0;
 }
 
