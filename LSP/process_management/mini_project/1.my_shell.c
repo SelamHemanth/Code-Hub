@@ -14,7 +14,7 @@ void shell(char command[])
 
 int main()
 {
-	char *command[1024];
+	char command[1024];
 	pid_t pid;
 	while(1)
 	{
