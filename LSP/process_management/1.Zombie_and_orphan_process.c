@@ -11,25 +11,33 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdlib.h>
+#include <errno.h>
 int main()
 {
+	int n,buffer;
 	pid_t pid;
-	int buffer;
-	printf("Parent is start\n");
-	getchar();
-	pid = fork();
-	if(pid == 0)
-	{ 
-		printf("Children start\n");
-		sleep(30); 
-		printf("children end\n"); 
+	char *name;
+	pid=fork();
+	if(pid <0)
+	{
+		perror("fork error");
+		exit(0);
+	}
+	else if(pid==0)
+	{
+		name="Children";
+		n=3;
 	}
 	else
-	{ 
-		wait(&buffer); 
-		printf("parent end\n");
+	{
+		name="Parent";
+		n=5;
+		while(1);
 	}
+	for(;n>0;n--)
+	{
+		puts(name);
+		sleep(1);
+	}
+	return 0;
 }
-
-
-
