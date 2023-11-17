@@ -5,7 +5,6 @@
 
 int main(int argc,char *argv[])
 {
-printf("%d\n",argc);
 	if(argc<2)
 		printf("Invalid Arguments\n");
 	else if(argc == 2)
