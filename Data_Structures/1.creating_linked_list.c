@@ -11,7 +11,35 @@ typedef struct student
 char ch;
 st *head,*new,*last;
 
-st free_nodes(st *temp)
+int check_position(int n)
+{
+	int count=0;
+	st * temp=head;
+	while(temp)
+	{
+		temp=temp->next;
+		count++;
+	}
+	if(count == n)
+		return 1;
+	else
+		return 0;
+}
+
+int check_key(int n)
+{
+	st *temp=head;
+	while(temp)
+	{
+		if(temp->ID == n)
+			return 1;
+		else
+			temp=temp->next;
+	}
+return 0;
+}
+
+void free_nodes(st *temp)
 {
 	st * reserve=NULL;
 	while(temp->next!=NULL)
@@ -23,7 +51,7 @@ st free_nodes(st *temp)
 	free(temp);
 }
 
-st delete_with_key(st *temp,int key)
+void delete_with_key(st *temp,int key)
 {
 	st *delete=NULL;
 	if(key==temp->ID)
@@ -46,7 +74,7 @@ st delete_with_key(st *temp,int key)
 }
 
 
-st * delete_with_position(st *temp,int n)
+void delete_with_position(st *temp,int n)
 {
 	int i=1;
 	st *delete=NULL;
@@ -65,11 +93,6 @@ st * delete_with_position(st *temp,int n)
 				temp=temp->next;
 				i++;
 			}
-			else
-			{
-				printf("Invalid position\n\n");
-				return 0;
-			}
 		}
 		delete=temp->next;
 		temp->next=delete->next;
@@ -78,7 +101,7 @@ st * delete_with_position(st *temp,int n)
 	printf("Position %d is deleted..\n",n);
 }
 
-st insert_after_key(st *temp,int key)
+void insert_after_key(st *temp,int key)
 {
 	while(temp->ID!=key)
 	{
@@ -99,7 +122,7 @@ st insert_after_key(st *temp,int key)
 }
 
 
-st insert_before_key(st *temp,int key)
+void insert_before_key(st *temp,int key)
 {
 	if(key==temp->ID)
 	{
@@ -156,7 +179,7 @@ st * insert_with_position(st *temp,int n)
 			}
 			else
 			{
-				printf("\nInvalid Position\n");
+				printf("\nInvalid Position\n\nTry Again...!\n");
 				return 0;
 			}
 		}
@@ -251,22 +274,34 @@ int main()
 			case 4: printf("Insert After Key\n");
 				printf("Enter Key: ");
 				scanf("%d",&n);
+				if(check_key(n))
 				insert_after_key(head,n);
+				else
+				printf("Invalid Key\nTry Again...!\n\n");
 				break;
 			case 5: printf("Insert Before Key\n");
 				printf("Enter Key: ");
 				scanf("%d",&n);
+				if(check_key(n))
 				insert_before_key(head,n);
+				else
+				printf("Invalid Key\nTry Again...!\n\n");
 				break;
 			case 6: printf("Delete with position\n");
 				printf("Enter Position: ");
 				scanf("%d",&n);
+				if(check_position(n))
 				delete_with_position(head,n);
+				else
+				printf("Invalid Position\nTry Again...!\n\n");
 				break;
 			case 7: printf("Delete with key\n");
 				printf("Enter Key: ");
 				scanf("%d",&n);
+				if(check_key(n))
 				delete_with_key(head,n);
+				else
+				printf("Invalid Key\nTry Again...!\n\n");
 				break;
 			case 8: free_nodes(head);
 				printf("\nThank you..!\n");
