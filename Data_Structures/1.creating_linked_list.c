@@ -124,7 +124,7 @@ void insert_after_key(st *temp,int key)
 
 void insert_before_key(st *temp,int key)
 {
-	if(key==temp->ID)
+	if(key<=temp->ID)
 	{
 		st *new=(st *)malloc(sizeof(st));
 		printf("Enter ID for student : ");
